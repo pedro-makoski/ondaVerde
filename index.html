@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onda Verde</title>
+    <link rel="stylesheet" href="./src/estilos/variaveis.css">
+    <link rel="stylesheet" href="./src/estilos/dados-base.css">
+    <link rel="stylesheet" href="./src/estilos/positions.css">
+</head>
+<body>
+    <main>
+        <section id="dados-base">
+            <h1>Vamos cálcular a onda verde</h1>
+            <div class="input">
+                <label for="velocity">Velocidade média dos carros em MRU</label>
+                <div>
+                    <input type="number" id="velocity" name="velocity" min="0">
+                    <select name="velocidade-grandeza" id="velocidade-grandeza">
+                        <option value="ms">m/s</option>
+                        <option value="kmh">km/h</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input">
+                <label for="quant-sinal">Quantidade de sinais no trajeto</label>
+                <div><input type="number" name="quant-sinal" id="quant-sinal" min="0"></div>
+            </div>
+            <div class="input">
+                <label for="tempo-de-abertura">Tempo em que o sinal ficara aberto</label>
+                <div>
+                    <input type="number" id="tempo-de-abertura" name="tempo-de-abertura" min="0">
+                    <select name="tempo-de-abertura-grandeza" id="tempo-de-abertura-grandeza">
+                        <option value="segundos">segundos</option>
+                        <option value="minutos">minutos</option>
+                        <option value="horas">horas</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input">
+                <label for="posicao-inicial">Posição inicial do carro</label>
+                <div>
+                    <input type="number" id="posicao-inicial" name="posicao-inicial" min="0">
+                    <select name="posicao-inicial-grandeza" id="posicao-inicial-grandeza">
+                        <option value="segundos">Metros</option>
+                        <option value="minutos">Kilometros</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button id="send-base" class="botao">Próximo</button>
+            </div>
+        </section>
+        <section class="posicoes">
+            <h2>Informe a posição de cada semaforo</h2>
+            <div class="inputs">
+
+            </div>
+            <div><button class="botao" id="send-positions">Próximo</button></div>
+        </section>
+    </main>
+    <script src="src/scripts/module/posicoes.js"></script>
+    <script src="src/scripts/module/verify.js"></script>
+    <script src="src/scripts/verificar.js"></script>
+    <script src="src/scripts/popup.js"></script>
+</body>
+</html>
