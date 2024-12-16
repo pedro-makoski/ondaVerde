@@ -17,8 +17,8 @@
                 <div>
                     <input type="number" id="velocity" name="velocity" min="0">
                     <select name="velocidade-grandeza" id="velocidade-grandeza">
-                        <option value="ms">m/s</option>
-                        <option value="kmh">km/h</option>
+                        <option value="m/s">m/s</option>
+                        <option value="km/h">km/h</option>
                     </select>
                 </div>
             </div>
@@ -38,12 +38,23 @@
                 </div>
             </div>
             <div class="input">
+                <label for="tempo-inicial">Tempo em que começara a ser feito o cálculo</label>
+                <div>
+                    <input type="number" id="tempo-inicial" name="tempo-inicial" min="0">
+                    <select name="tempo-inicial-grandeza" id="tempo-inicial-grandeza">
+                        <option value="segundos">segundos</option>
+                        <option value="minutos">minutos</option>
+                        <option value="horas">horas</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input">
                 <label for="posicao-inicial">Posição inicial do carro</label>
                 <div>
                     <input type="number" id="posicao-inicial" name="posicao-inicial" min="0">
                     <select name="posicao-inicial-grandeza" id="posicao-inicial-grandeza">
-                        <option value="segundos">Metros</option>
-                        <option value="minutos">Kilometros</option>
+                        <option value="metros">Metros</option>
+                        <option value="kilometros">kilometros</option>
                     </select>
                 </div>
             </div>
@@ -63,5 +74,8 @@
     <script src="src/scripts/module/verify.js"></script>
     <script src="src/scripts/verificar.js"></script>
     <script src="src/scripts/popup.js"></script>
+    <script src="src/scripts/module/parse.js"></script>
+    <script src="src/scripts/tratarDados.js"></script>
+    <script src="src/scripts/module/calculos.js"></script>
 </body>
 </html>

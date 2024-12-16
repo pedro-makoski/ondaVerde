@@ -1,5 +1,6 @@
 .posicoes {
-    display: none;
+    top: -100vh;
+    transform: translateY(-100vh);
     position: absolute;
     background-color: var(--secondary-color);
     width: 400px;
@@ -8,4 +9,14 @@
     overflow: auto;
     box-shadow: 1px 1px 5px var(--shawdow-color);
     border-radius: var(--border-radius-padrao);
+    opacity: 0;
+    transition: .2s;
+}
+
+.appear {
+    display: block;
+    transition: .2s;
+    top: 50%;
+    opacity: 1;
+    transform: translateY(-50%);
 }

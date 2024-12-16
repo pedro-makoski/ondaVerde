@@ -25,17 +25,19 @@ function verify(object, selections, names) {
 
         for(let i = 0; i < keys.length; i++) {
             for(let j = 0; j < selections.length; j++) {
-                if(values[i](document.querySelector(selections[j]).value)) {
-                    errados.push(names[j]);
-                    if(!mensagens.includes(keys[i])) {
-                        mensagens.push(keys[i]);
+                const inputs =document.querySelectorAll(selections[j]);
+                inputs.forEach((input) => {
+                    if(values[i](input.value)) {
+                        errados.push(names[j]);
+                        if(!mensagens.includes(keys[i])) {
+                            mensagens.push(keys[i]);
+                        }
                     }
-                }
+                })
             }
         }
 
         if(errados.length>0) {
-            console.log(mensagens);
             window.alert(`Problema no(s) input(s) sobre ${enumerate(errados)}, ${enumerate(mensagens)}`);
             return 0; 
         } else {
