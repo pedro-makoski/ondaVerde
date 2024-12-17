@@ -15,7 +15,7 @@
             <div class="input">
                 <label for="velocity">Velocidade média dos carros em MRU</label>
                 <div>
-                    <input type="number" id="velocity" name="velocity" min="0">
+                    <input type="text" id="velocity" name="velocity" min="0">
                     <select name="velocidade-grandeza" id="velocidade-grandeza">
                         <option value="m/s">m/s</option>
                         <option value="km/h">km/h</option>
@@ -29,7 +29,7 @@
             <div class="input">
                 <label for="tempo-de-abertura">Tempo em que o sinal ficara aberto</label>
                 <div>
-                    <input type="number" id="tempo-de-abertura" name="tempo-de-abertura" min="0">
+                    <input type="text" id="tempo-de-abertura" name="tempo-de-abertura" min="0">
                     <select name="tempo-de-abertura-grandeza" id="tempo-de-abertura-grandeza">
                         <option value="segundos">segundos</option>
                         <option value="minutos">minutos</option>
@@ -40,7 +40,7 @@
             <div class="input">
                 <label for="tempo-inicial">Tempo em que começara a ser feito o cálculo</label>
                 <div>
-                    <input type="number" id="tempo-inicial" name="tempo-inicial" min="0">
+                    <input type="text" id="tempo-inicial" name="tempo-inicial" min="0">
                     <select name="tempo-inicial-grandeza" id="tempo-inicial-grandeza">
                         <option value="segundos">segundos</option>
                         <option value="minutos">minutos</option>
@@ -51,7 +51,7 @@
             <div class="input">
                 <label for="posicao-inicial">Posição inicial do carro</label>
                 <div>
-                    <input type="number" id="posicao-inicial" name="posicao-inicial" min="0">
+                    <input type="text" id="posicao-inicial" name="posicao-inicial" min="0">
                     <select name="posicao-inicial-grandeza" id="posicao-inicial-grandeza">
                         <option value="metros">Metros</option>
                         <option value="kilometros">kilometros</option>
@@ -68,6 +68,20 @@
 
             </div>
             <div><button class="botao" id="send-positions">Próximo</button></div>
+        </section>
+        <section class="resultados">
+            <h2>Trajeto</h2>
+            <div class="trajeto-infos">
+                <div class="trajeto">
+                    <div class="time-point">
+                        <div class="bullet-point">
+                        </div>
+                        <p class="time"></p>
+                    </div>
+                </div>
+                <div class="tempos-diferenciais">
+                </div>
+            </div>
         </section>
     </main>
     <script src="src/scripts/module/posicoes.js"></script>

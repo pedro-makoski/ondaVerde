@@ -10,9 +10,8 @@ function replace(string, key, value) {
 }
 
 class ElementosInputs {
-    constructor(string, quant) {
+    constructor(string) {
         this.string = string;
-        this.quant = quant;
     }
 
     substituir(valores) {
@@ -26,12 +25,24 @@ class ElementosInputs {
         return this.stringNew;
     }
 
-    doRepeat(key) {
+    doRepeat(key, quant) {
         this.res = "";
 
-        for(let i = 1; i <= this.quant; i++) {
+        for(let i = 1; i <= quant; i++) {
             const object = {}
             object[key] = i; 
+            this.res += this.substituir(object);
+        }
+
+        return this.res
+    }
+
+    doOnList(list, key) {
+        this.res = "";
+
+        for(let i = 0; i < list.length; i++) {
+            const object = {}
+            object[key] = list[i]; 
             this.res += this.substituir(object);
         }
 
