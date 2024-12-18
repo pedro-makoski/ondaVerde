@@ -11,11 +11,11 @@ botao_dados_base.addEventListener('click', () => {
     passed = [];
     passed[0] = verify({
         "O valor não pode ser negativo": (value => toNumber(value)<0)
-    }, ["#tempo-de-abertura", "#quant-sinal", "#tempo-inicial"], ["Tempo de Abertura", "Quantidade de sinais", "Tempo inicial"])
+    }, ["#tempo-de-abertura", "#tempo-de-fechado", "#quant-sinal", "#tempo-inicial"], ["Tempo de Abertura", "tempo com o sinal fechado", "Quantidade de sinais", "Tempo inicial"])
 
     passed[1] = verify({
         "O valor não pode ser vázio ou conter caracteres não numericos": (value => isNaN(toNumber(value)))
-    }, ["#tempo-de-abertura", "#quant-sinal", "#velocity", "#posicao-inicial", "tempo-inicial"], ["Tempo de Abertura", "Quantidade de sinais", "velocidade", "posição inicial", "tempo inicial"]);    
+    }, ["#tempo-de-abertura", "#tempo-de-fechado", "#quant-sinal", "#velocity", "#posicao-inicial", "tempo-inicial"], ["Tempo de Abertura", "tempo com o sinal fechado", "Quantidade de sinais", "velocidade", "posição inicial", "tempo inicial"]);    
 
     passed[2] = verify({
         "O valor não pode ser 0": (value => toNumber(value)===0)

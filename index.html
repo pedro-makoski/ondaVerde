@@ -12,50 +12,63 @@
     <main>
         <section id="dados-base">
             <h1>Vamos cálcular a onda verde</h1>
-            <div class="input">
-                <label for="velocity">Velocidade média dos carros em MRU</label>
-                <div>
-                    <input type="text" id="velocity" name="velocity" min="0">
-                    <select name="velocidade-grandeza" id="velocidade-grandeza">
-                        <option value="m/s">m/s</option>
-                        <option value="km/h">km/h</option>
-                    </select>
+            <div class="inputs">
+                <div class="input">
+                    <label for="velocity">Velocidade média dos carros em MRU</label>
+                    <div>
+                        <input type="text" id="velocity" name="velocity" min="0">
+                        <select name="velocidade-grandeza" id="velocidade-grandeza">
+                            <option value="m/s">m/s</option>
+                            <option value="km/h">km/h</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="input">
-                <label for="quant-sinal">Quantidade de sinais no trajeto</label>
-                <div><input type="number" name="quant-sinal" id="quant-sinal" min="0"></div>
-            </div>
-            <div class="input">
-                <label for="tempo-de-abertura">Tempo em que o sinal ficara aberto</label>
-                <div>
-                    <input type="text" id="tempo-de-abertura" name="tempo-de-abertura" min="0">
-                    <select name="tempo-de-abertura-grandeza" id="tempo-de-abertura-grandeza">
-                        <option value="segundos">segundos</option>
-                        <option value="minutos">minutos</option>
-                        <option value="horas">horas</option>
-                    </select>
+                <div class="input">
+                    <label for="quant-sinal">Quantidade de sinais no trajeto</label>
+                    <div><input type="number" name="quant-sinal" id="quant-sinal" min="0"></div>
                 </div>
-            </div>
-            <div class="input">
-                <label for="tempo-inicial">Tempo em que começara a ser feito o cálculo</label>
-                <div>
-                    <input type="text" id="tempo-inicial" name="tempo-inicial" min="0">
-                    <select name="tempo-inicial-grandeza" id="tempo-inicial-grandeza">
-                        <option value="segundos">segundos</option>
-                        <option value="minutos">minutos</option>
-                        <option value="horas">horas</option>
-                    </select>
+                <div class="input">
+                    <label for="tempo-de-abertura">Tempo em que o sinal ficara aberto</label>
+                    <div>
+                        <input type="text" id="tempo-de-abertura" name="tempo-de-abertura" min="0">
+                        <select name="tempo-de-abertura-grandeza" id="tempo-de-abertura-grandeza">
+                            <option value="segundos">segundos</option>
+                            <option value="minutos">minutos</option>
+                            <option value="horas">horas</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="input">
-                <label for="posicao-inicial">Posição inicial do carro</label>
-                <div>
-                    <input type="text" id="posicao-inicial" name="posicao-inicial" min="0">
-                    <select name="posicao-inicial-grandeza" id="posicao-inicial-grandeza">
-                        <option value="metros">Metros</option>
-                        <option value="kilometros">kilometros</option>
-                    </select>
+                <div class="input">
+                    <label for="tempo-de-fechado">Tempo em que o sinal ficara fechado</label>
+                    <div>
+                        <input type="text" id="tempo-de-fechado" name="tempo-de-fechado" min="0">
+                        <select name="tempo-de-fechado-grandeza" id="tempo-de-fechado-grandeza">
+                            <option value="segundos">segundos</option>
+                            <option value="minutos">minutos</option>
+                            <option value="horas">horas</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="tempo-inicial">Tempo em que começara a ser feito o cálculo</label>
+                    <div>
+                        <input type="text" id="tempo-inicial" name="tempo-inicial" min="0">
+                        <select name="tempo-inicial-grandeza" id="tempo-inicial-grandeza">
+                            <option value="segundos">segundos</option>
+                            <option value="minutos">minutos</option>
+                            <option value="horas">horas</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="posicao-inicial">Posição inicial do carro</label>
+                    <div>
+                        <input type="text" id="posicao-inicial" name="posicao-inicial" min="0">
+                        <select name="posicao-inicial-grandeza" id="posicao-inicial-grandeza">
+                            <option value="metros">Metros</option>
+                            <option value="kilometros">kilometros</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div>
@@ -92,5 +105,6 @@
     <script src="src/scripts/module/parse.js"></script>
     <script src="src/scripts/tratarDados.js"></script>
     <script src="src/scripts/module/calculos.js"></script>
+    <script src="src/scripts/module/ondaVerde.js"></script>
 </body>
 </html>

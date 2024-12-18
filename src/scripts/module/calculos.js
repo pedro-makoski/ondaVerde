@@ -15,13 +15,13 @@ class MRU {
 
 // referencial - 0 - posição inicial
 // referencial - 1 - posicao anterior
-function calcMultiplePositions(valores, posicaoInicial, referencial, velocidade) {
+function calcMultiplePositions(valores, posicaoInicial, referencial, velocidade, tempo_inicial) {
     let res = []
 
     if(referencial === 0) {
         for(let i = 0; i < valores.length; i++) {
             const mru = new MRU(velocidade, posicaoInicial);
-            res.push(mru.calcTime(valores[i]));
+            res.push(mru.calcTime(valores[i])+tempo_inicial);
         }
     }
 
@@ -29,7 +29,7 @@ function calcMultiplePositions(valores, posicaoInicial, referencial, velocidade)
         let posAnterior = posicaoInicial;
         for(let i = 0; i < valores.length; i++) {
             const mru = new MRU(velocidade, posAnterior);
-            res.push(mru.calcTime(valores[i]));
+            res.push(Math.abs(mru.calcTime(valores[i])));
             posAnterior = valores[i]; 
         }
     }
