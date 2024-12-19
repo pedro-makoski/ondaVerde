@@ -34,7 +34,7 @@ class ElementosInputs {
             this.res += this.substituir(object);
         }
 
-        return this.res
+        return this.res;
     }
 
     doOnList(list, key) {
@@ -46,6 +46,6 @@ class ElementosInputs {
             this.res += this.substituir(object);
         }
 
-        return this.res
+        return this.res;
     }
 }

@@ -16,7 +16,7 @@
                 <div class="input">
                     <label for="velocity">Velocidade média dos carros em MRU</label>
                     <div>
-                        <input type="text" id="velocity" name="velocity" min="0">
+                        <input type="text" id="velocity" name="velocity" min="0" autocomplete="off">
                         <select name="velocidade-grandeza" id="velocidade-grandeza">
                             <option value="m/s">m/s</option>
                             <option value="km/h">km/h</option>
@@ -25,12 +25,12 @@
                 </div>
                 <div class="input">
                     <label for="quant-sinal">Quantidade de sinais no trajeto</label>
-                    <div><input type="number" name="quant-sinal" id="quant-sinal" min="0"></div>
+                    <div><input type="number" name="quant-sinal" id="quant-sinal" min="0" autocomplete="off"></div>
                 </div>
                 <div class="input">
                     <label for="tempo-de-abertura">Tempo em que o sinal ficara aberto</label>
                     <div>
-                        <input type="text" id="tempo-de-abertura" name="tempo-de-abertura" min="0">
+                        <input type="text" id="tempo-de-abertura" name="tempo-de-abertura" min="0" autocomplete="off">
                         <select name="tempo-de-abertura-grandeza" id="tempo-de-abertura-grandeza">
                             <option value="segundos">segundos</option>
                             <option value="minutos">minutos</option>
@@ -41,7 +41,7 @@
                 <div class="input">
                     <label for="tempo-de-fechado">Tempo em que o sinal ficara fechado</label>
                     <div>
-                        <input type="text" id="tempo-de-fechado" name="tempo-de-fechado" min="0">
+                        <input type="text" id="tempo-de-fechado" name="tempo-de-fechado" min="0" autocomplete="off">
                         <select name="tempo-de-fechado-grandeza" id="tempo-de-fechado-grandeza">
                             <option value="segundos">segundos</option>
                             <option value="minutos">minutos</option>
@@ -52,7 +52,7 @@
                 <div class="input">
                     <label for="tempo-inicial">Tempo em que começara a ser feito o cálculo</label>
                     <div>
-                        <input type="text" id="tempo-inicial" name="tempo-inicial" min="0">
+                        <input type="text" id="tempo-inicial" name="tempo-inicial" min="0" autocomplete="off">
                         <select name="tempo-inicial-grandeza" id="tempo-inicial-grandeza">
                             <option value="segundos">segundos</option>
                             <option value="minutos">minutos</option>
@@ -63,7 +63,7 @@
                 <div class="input">
                     <label for="posicao-inicial">Posição inicial do carro</label>
                     <div>
-                        <input type="text" id="posicao-inicial" name="posicao-inicial" min="0">
+                        <input type="text" id="posicao-inicial" name="posicao-inicial" min="0" autocomplete="off">
                         <select name="posicao-inicial-grandeza" id="posicao-inicial-grandeza">
                             <option value="metros">Metros</option>
                             <option value="kilometros">kilometros</option>
@@ -71,11 +71,15 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <button id="send-base" class="botao">Próximo</button>
+            <div class="buttons-main">
+                <button id="send-base">Ver horarios de chegada nos semáforos</button>
+                <button id="send-base-to-horarios-de-abertura-e-de-fechado">Ver os horários de abrir e fechar o carro</button>
             </div>
         </section>
         <section class="posicoes">
+            <div class="exit">
+                <p>&times;</p>
+            </div>
             <h2>Informe a posição de cada semaforo</h2>
             <div class="inputs">
 
@@ -83,6 +87,9 @@
             <div><button class="botao" id="send-positions">Próximo</button></div>
         </section>
         <section class="resultados">
+            <div class="exit">
+                <p>&times;</p>
+            </div>
             <h2>Trajeto</h2>
             <p class="ate-semaforo"></p>
             <div class="trajeto-infos">
@@ -96,8 +103,26 @@
                 <div class="tempos-diferenciais">
                 </div>
             </div>
+            <div><button class="botao send-positions-from-resultados" id="send-positions-from-resultados">Ver os horarios da chegada nos semaforos</button></div>
+        </section>
+        <section class="aberto-fechado">
+            <div>
+                <div class="exit">
+                    <p>&times;</p>
+                </div>
+                <h2>Horários em que o sinaleiro vai abrir e fechar</h2>
+            </div>
+            <div>
+                <label for="resolution">Quantidade de entradas e saídas</label>
+                <input type="number" name="resolution" id="resolution" value="5">
+            </div>
+            <div class="sinaleiro-abre-e-fecha">
+                
+            </div>
+            <div><button class="botao send-positions-aberto-fechado" id="send-positions-aberto-fechado">Ver os horarios da chegada nos semaforos</button></div>
         </section>
     </main>
+    <script src="src/scripts/fechar.js"></script>
     <script src="src/scripts/module/posicoes.js"></script>
     <script src="src/scripts/module/verify.js"></script>
     <script src="src/scripts/verificar.js"></script>
@@ -106,5 +131,6 @@
     <script src="src/scripts/tratarDados.js"></script>
     <script src="src/scripts/module/calculos.js"></script>
     <script src="src/scripts/module/ondaVerde.js"></script>
+    <script src="src/scripts/horariosAbertoFechado.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 const botao_dados_base = document.querySelector("#send-base");
-const botao_positions = document.querySelector("#send-positions")
+const botao_positions = document.querySelector("#send-positions");
 
 function toNumber(valor) {
     let number = valor.replace(',', '.');
@@ -7,7 +7,7 @@ function toNumber(valor) {
 }
 
 let passed = [];
-botao_dados_base.addEventListener('click', () => {
+function verifyInputsStandart() {
     passed = [];
     passed[0] = verify({
         "O valor não pode ser negativo": (value => toNumber(value)<0)
@@ -20,9 +20,20 @@ botao_dados_base.addEventListener('click', () => {
     passed[2] = verify({
         "O valor não pode ser 0": (value => toNumber(value)===0)
     }, ["#quant-sinal", "#velocity"], ["Quantidade de sinais", "Velocidade"]);
-});
 
-botao_positions.addEventListener("click", () => {
+    for(let i = 0; i < passed.length; i++) {
+        if(passed[i]===0) {
+            passed =0;
+            break;
+        }
+    }
+
+    if(passed !== 0) {
+        passed = 1;
+    }
+}
+
+function verifyInputsPositions() {
     passed = 1; 
     const inputsPoses = document.querySelectorAll(".input-positions");
 
@@ -41,4 +52,4 @@ botao_positions.addEventListener("click", () => {
     if(passed_this === 0 || passed === 0) {
         passed = 0;
     } 
-})
+}

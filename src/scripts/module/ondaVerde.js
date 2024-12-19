@@ -14,7 +14,7 @@ class AberturasEFechaduras {
         this.positions = positions
     }
 
-    registrarTempoPadrao(quant, tempoInicial) {
+    registrarTempoPadrao(quant) {
         let res = {};
 
         for(let i = 0; i < this.positions.length; i++) {
@@ -24,7 +24,7 @@ class AberturasEFechaduras {
             let abreEm = this.temposDeChegada[i];
             for(let j = 0; j < quant; j++) {   
                 aberturas.push(abreEm);
-                let fechaEm = abreEm+this.tempoAbrir
+                let fechaEm = abreEm+this.tempoAbrir;
                 horariosDeFechar.push(fechaEm);
                 abreEm = fechaEm+this.tempoFechar;
             }
@@ -38,7 +38,19 @@ class AberturasEFechaduras {
         return res; 
     }
 
-    registrarTempoPensandoNosDoisLadosComCarrosDeMesmaVelocidade(quant, tempoInicial, posicaoInicial, velocidade){
+    formatarRegistrarTempoPadrao(quant, className, headingStart, headingLevel, unidades) {
+        let resultadoRegistroObjeto = this.registrarTempoPadrao(quant);
+        let res = "";
+        for(let i = 0; i < this.positions.length; i++) {
+            res+=`<div class="${className}">`;
+            res+=`<h${headingLevel}>${headingStart} ${i+1}</h${headingLevel}>`;
+            for(let j = 0; j < quant; j++) {
+                res+=`<p>Abre em: ${resultadoRegistroObjeto[this.positions[i]]["aberto"][j]} ${unidades}</p><p>Fecha em: ${resultadoRegistroObjeto[this.positions[i]]["fechado"][j]} ${unidades}</p>`;
+            }
 
+            res+="</div>";
+        }
+
+        return res; 
     }
 }

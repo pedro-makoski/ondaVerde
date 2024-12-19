@@ -1,10 +1,10 @@
-.posicoes, .resultados{
+.posicoes, .resultados, .aberto-fechado{
     top: -100vh;
     transform: translateY(-100vh);
     position: absolute;
     background-color: var(--secondary-color);
     width: 400px;
-    padding: 30px;
+    padding: 40px;
     max-height: calc(100vh - 30px);
     overflow: auto;
     box-shadow: 1px 1px 5px var(--shawdow-color);
@@ -44,7 +44,7 @@
 
 .traco {
     width: 7px;
-    height: 50px;
+    height: 100px;
     background-color: var(--primary-color);
     transform: translate(6.5px, 0);
 }
@@ -64,9 +64,63 @@
 }
 
 .tempos-diferenciais:nth-child(1n) {
-    margin-top: 35px;
+    margin-top: 50px;
 }
 
 .tempos-diferenciais > p:not(:first-child) {
-    margin-top: 50px;
+    margin-top: 100px;
+}
+
+.ate-semaforo {
+    margin-bottom: 20px;
+}
+
+.exit {
+    cursor: pointer;
+    float: right;
+    border-radius: 50px;
+    font-size: 2em;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color-3);
+    border: 0px solid var(--primary-color);
+    transition: .2s;
+}
+
+.exit:hover {
+    border-width: 1px;
+    transition: .2s;
+}
+
+.exit p {
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 5px;
+}
+
+#resolution {
+    margin-bottom: 10px;
+    border: 1px solid var(--primary-color);
+}
+
+#resolution:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+.sinaleiro-abre-e-fecha {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.sinaleiro {
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
 }
