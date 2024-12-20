@@ -38,7 +38,7 @@ function verify(object, selections, names) {
         }
 
         if(errados.length>0) {
-            window.alert(`Problema no(s) input(s) sobre ${enumerate(errados)}, ${enumerate(mensagens)}`);
+            window.alert(`Problema(s) no(s) input(s) ${enumerate(errados)}, ${enumerate(mensagens)}`);
             return 0; 
         } else {
             return 1;

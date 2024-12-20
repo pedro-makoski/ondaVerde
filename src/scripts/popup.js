@@ -1,15 +1,25 @@
 const configs = {}
 
-function verificarClick(elemento, buttonToAppear, doMoreThings, actualButton, idx) {
+function verificarClick(elemento, buttonsToAppear, doMoreThings, actualButton, idx) {
+    let finalizar = false;
     const element = document.querySelector(elemento);
     if(configs[idx] === actualButton) {
         document.addEventListener("click", (e) => {
-            if(!e.target.closest(elemento) && !e.target.closest(buttonToAppear) && configs[idx] === actualButton){
-                console.log(e.target, configs[idx],  buttonToAppear);
-                element.classList.remove("appear");
-                if(doMoreThings !== undefined) {
-                    doMoreThings();
+            if(!e.target.closest(elemento) && configs[idx] === actualButton){
+                let allButtonsPassed = true;
+                for(let i = 0; i < buttonsToAppear.length; i++) {
+                    let closest = e.target.closest(buttonsToAppear[i]);
+                    allButtonsPassed = allButtonsPassed && !closest; 
                 }
+
+                if(allButtonsPassed) {
+                    element.classList.remove("appear");
+                    if(doMoreThings !== undefined) {
+                        doMoreThings();
+                    }
+                    finalizar = true;
+                    return;
+                } 
             }
         })  
     }
@@ -25,6 +35,6 @@ function doPositionsPopup(buttonStart, buttonName) {
 
     inputs_place.innerHTML = elementosInputs.doRepeat("value", quant_sinal);
     popupPositions.classList.add("appear");
-    verificarClick(".posicoes", `#${buttonStart}`, undefined, buttonName, "buttonToSee");
+    verificarClick(".posicoes", [`#${buttonStart}`, `#${botao_positions.id}`], undefined, buttonName, "buttonToSee");
 }
 

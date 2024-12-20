@@ -10,16 +10,16 @@ let passed = [];
 function verifyInputsStandart() {
     passed = [];
     passed[0] = verify({
-        "O valor não pode ser negativo": (value => toNumber(value)<0)
-    }, ["#tempo-de-abertura", "#tempo-de-fechado", "#quant-sinal", "#tempo-inicial"], ["Tempo de Abertura", "tempo com o sinal fechado", "Quantidade de sinais", "Tempo inicial"])
+        "o valor não pode ser negativo": (value => toNumber(value)<0)
+    }, ["#tempo-de-abertura", "#tempo-de-fechado", "#quant-sinal", "#tempo-inicial"], ["tempo de abertura", "tempo com o sinal fechado", "quantidade de sinais", "tempo inicial"])
 
     passed[1] = verify({
-        "O valor não pode ser vázio ou conter caracteres não numericos": (value => isNaN(toNumber(value)))
-    }, ["#tempo-de-abertura", "#tempo-de-fechado", "#quant-sinal", "#velocity", "#posicao-inicial", "tempo-inicial"], ["Tempo de Abertura", "tempo com o sinal fechado", "Quantidade de sinais", "velocidade", "posição inicial", "tempo inicial"]);    
+        "o valor não pode ser vázio ou conter caracteres não numericos": (value => isNaN(toNumber(value)))
+    }, ["#tempo-de-abertura", "#tempo-de-fechado", "#quant-sinal", "#velocity", "#posicao-inicial", "tempo-inicial"], ["tempo de Abertura", "tempo com o sinal fechado", "quantidade de sinais", "velocidade", "posição inicial", "tempo inicial"]);    
 
     passed[2] = verify({
-        "O valor não pode ser 0": (value => toNumber(value)===0)
-    }, ["#quant-sinal", "#velocity"], ["Quantidade de sinais", "Velocidade"]);
+        "o valor não pode ser 0": (value => toNumber(value)===0)
+    }, ["#quant-sinal", "#velocity"], ["quantidade de sinais", "velocidade"]);
 
     for(let i = 0; i < passed.length; i++) {
         if(passed[i]===0) {
@@ -42,7 +42,7 @@ function verifyInputsPositions() {
 
     for(let i = 0; i < inputsPoses.length; i++) {
         ids.push(`#${inputsPoses[i].id}`);
-        names.push("Input da posição " + (i+1));
+        names.push("input da posição " + (i+1));
     }
 
     let passed_this = verify({
