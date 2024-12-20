@@ -3,6 +3,7 @@ function reverseTimeStamps(positions, posicaoInicial, velocidade, referencial, t
     let velocity = -1*velocidade;
     let timeStamps = [];
     timeStamps = calcMultiplePositions(positions, InicialPosition, referencial, velocity, tempo_inicial);
+    console.log(velocity, InicialPosition, tempo_inicial)
     return timeStamps; 
 }
 
@@ -76,7 +77,7 @@ class AberturasEFechaduras {
             res+="</div>";
         }
 
-        console.log(this.verificarDoOutroLado(0, 20, 0))
+        console.log(this.verificarDoOutroLado(0, 50, 0))
         return res; 
     }
 
