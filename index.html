@@ -77,9 +77,9 @@
             </div>
         </section>
         <section class="posicoes">
-            <div class="exit">
+            <button class="exit" aria-label="sair do container">
                 <p>&times;</p>
-            </div>
+            </button>
             <h2>Informe a posição de cada semaforo</h2>
             <div class="inputs">
 
@@ -87,9 +87,9 @@
             <div><button class="botao" id="send-positions">Próximo</button></div>
         </section>
         <section class="resultados">
-            <div class="exit">
+            <button class="exit" aria-label="sair do container">
                 <p>&times;</p>
-            </div>
+            </button>
             <h2>Trajeto</h2>
             <p class="ate-semaforo"></p>
             <div class="trajeto-infos">
@@ -106,11 +106,17 @@
             <div><button class="botao send-positions-from-resultados" id="send-positions-from-resultados">Ver os horarios da chegada nos semaforos</button></div>
         </section>
         <section class="aberto-fechado">
+            <button class="exit" aria-label="sair do container">
+                <p>&times;</p>
+            </button>
             <div>
-                <div class="exit">
-                    <p>&times;</p>
-                </div>
                 <h2>Horários em que o sinaleiro vai abrir e fechar</h2>
+            </div>
+            <div class="popup-info">
+                <button class="exit" aria-label="sair do container">
+                    <p>&times;</p>
+                </button>
+                <p></p>
             </div>
             <div>
                 <label for="resolution">Quantidade de entradas e saídas</label>

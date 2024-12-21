@@ -95,12 +95,6 @@
     transition: .2s;
 }
 
-.exit p {
-    width: fit-content;
-    height: fit-content;
-    margin-bottom: 5px;
-}
-
 #resolution {
     margin-bottom: 10px;
     border: 1px solid var(--primary-color);
@@ -123,4 +117,30 @@
     padding: 20px;
     border-radius: 20px;
     border: 1px solid var(--primary-color);
+}
+
+.popup-info {
+    position: static;
+    display: none;
+    max-width: 400px;
+    background-color: var(--primary-color);
+    box-shadow: 1px 1px 10px var(--shawdow-color);
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    width: fit-content;
+    transition: .2s;
+    height: fit-content;
+}
+
+.popup-info.appear {
+    display: block;
+    position: static;
+    transform: translate(0);
+}
+
+.popup-info button {
+    float: none;
+    margin-bottom: 10px;
+    color:white;
 }

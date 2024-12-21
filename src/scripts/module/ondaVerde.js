@@ -3,7 +3,6 @@ function reverseTimeStamps(positions, posicaoInicial, velocidade, referencial, t
     let velocity = -1*velocidade;
     let timeStamps = [];
     timeStamps = calcMultiplePositions(positions, InicialPosition, referencial, velocity, tempo_inicial);
-    console.log(velocity, InicialPosition, tempo_inicial)
     return timeStamps; 
 }
 
@@ -77,14 +76,12 @@ class AberturasEFechaduras {
             res+="</div>";
         }
 
-        console.log(this.verificarDoOutroLado(0, 50, 0))
         return res; 
     }
 
     verificarDoOutroLado(posicaoInicial, velocidade, t0) {
         let pegouFechado = {};
         let reverseTemposDeChegada = reverseTimeStamps(this.positions, posicaoInicial, velocidade, 0, t0);
-        console.log(this.temposDeChegada, reverseTemposDeChegada);
 
         for(let i = 0; i < this.temposDeChegada.length; i++) {
             let abertoCarroIda = this.temposDeChegada[i];
@@ -100,10 +97,32 @@ class AberturasEFechaduras {
             }
 
             if(abertoCarroIda > abertoCarroVolta) {
-                pegouFechado[this.positions[i]] = [i+1, true];
+                pegouFechado[this.positions[i]] = i+1;
             }
         }
 
         return pegouFechado;
+    }
+
+    verificarDoOutroLadoString(posicaoInicial, velocidade, t0) {
+        let object = this.verificarDoOutroLado(posicaoInicial, velocidade, t0);
+        const keys = Object.keys(object);
+        const values = Object.values(object);
+        let res = "";
+        const elementos_unidirecionais = []
+
+        if(keys.length > 0) {
+            res+="A onda verde é unidirecional ela dá problemas nos semaforos: ";
+        } else {
+            return "O sistema funciona para ambos os lados"
+        }
+
+        for(let i = 0; i < keys.length; i++) {
+            elementos_unidirecionais.push(`${values[i]} da posição ${keys[i]} metros`);
+        }
+
+        res+=enumerate(elementos_unidirecionais);
+
+        return res; 
     }
 }

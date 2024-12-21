@@ -6,6 +6,7 @@ function reiniciarHorarios() {
     placeAF.innerHTML = '';    
 }
 
+const MAX_VALUE_RESOLUTION = 50; 
 
 function baseSimplesAbertoFechado(local) {
     const [times, timesDiference] = obterDadosTratados();
@@ -18,9 +19,9 @@ function baseSimplesAbertoFechado(local) {
     const resolution = document.getElementById("resolution");
     resolution.oninput = () => {
         let value = toNumber(inputResolution.value); 
-        if(value > 50) {
-            value = 50; 
-            inputResolution.value = 50; 
+        if(value > MAX_VALUE_RESOLUTION) {
+            value = MAX_VALUE_RESOLUTION; 
+            inputResolution.value = MAX_VALUE_RESOLUTION; 
             window.alert("valor muito alto, por favor insira um valor menor");
         }
         placeAF.innerHTML = aberturasEFechaduras.formatarRegistrarTempoPadrao(value, "sinaleiro", "Sinaleiro ", 3);
@@ -28,6 +29,13 @@ function baseSimplesAbertoFechado(local) {
 
     abertoFechado.classList.add("appear");
     popupPositions.classList.remove("appear");
+
+    const popupInfo = document.querySelector(".popup-info");
+    const paragrafoPopupInfo = document.querySelector(".popup-info > p");
+
+    popupInfo.classList.add("appear");
+    paragrafoPopupInfo.innerHTML = aberturasEFechaduras.verificarDoOutroLadoString(valores.s_0, valores.velocity, valores.t_0);
+
     verificarClick(".aberto-fechado", local, reiniciarHorarios, "aberto-fechado", "buttonToSee");
 }
 
