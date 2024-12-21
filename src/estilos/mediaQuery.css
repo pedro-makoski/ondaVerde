@@ -1,0 +1,16 @@
+.posicoes, .resultados, .aberto-fechado {
+    width: 400px;
+    height: fit-content;
+    border-radius: var(--border-radius-padrao);
+}
+
+.resultados {
+    width: 470px;
+    border-radius: var(--border-radius-padrao);
+}
+
+#dados-base {
+    height: fit-content;
+    width: 460px;
+    border-radius: var(--border-radius-padrao);
+}

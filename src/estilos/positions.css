@@ -3,18 +3,18 @@
     transform: translateY(-100vh);
     position: absolute;
     background-color: var(--secondary-color);
-    width: 400px;
+    width: 95%;
+    border-radius: var(--border-radius-padrao);
     padding: 40px;
-    max-height: calc(100vh - 30px);
+    max-height: 100vh;
     overflow: auto;
     box-shadow: 1px 1px 5px var(--shawdow-color);
-    border-radius: var(--border-radius-padrao);
     opacity: 0;
     transition: .2s;
 }
 
 .resultados {
-    width: 470px;
+    width: 100%;
 }
 
 .appear {
