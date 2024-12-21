@@ -17,9 +17,9 @@ function timeFormatationsFromSeconds(seconds) {
     minutos = aux%60;
     horas = aux/60|0; 
 
-    segundos = segundos.toString().padStart(2, '0');
-    minutos = minutos.toString().padStart(2, '0');
-    horas = horas.toString().padStart(2, '0');
+    segundos = Math.round(segundos).toFixed(0).toString().padStart(2, '0');
+    minutos = Math.round(minutos).toFixed(0).toString().padStart(2, '0');
+    horas = Math.round(horas).toFixed(0).toString().padStart(2, '0');
 
     return `${horas}:${minutos}:${segundos}`
 }

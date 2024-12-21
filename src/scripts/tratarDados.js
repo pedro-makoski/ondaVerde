@@ -66,13 +66,22 @@ function obterDadosTratados() {
     return [times, timesDiference];
 }
 
+function converterTodosDecimal(valores, quant) {
+    let lista = [];
+    for(let i = 0; i < valores.length; i++) {
+        lista.push(valores[i].toFixed(quant));
+    }
+
+    return lista; 
+}
+
 const resultados = document.querySelector(".resultados");
 
 function tratData(local) {
     if(passed === 1) {
         let [times, timesDiference] = obterDadosTratados();
     
-        let timesText = mesclarInString(times, valores.positions, ' segundo(s) a posição do carro vai ser de: ', ' metro(s)', 'Em ', (timeList, positionlist, idx, resList) => {
+        let timesText = mesclarInString(converterTodosDecimal(times, 2), converterTodosDecimal(valores.positions, 2), ' segundo(s) a posição do carro vai ser de: ', ' metro(s)', 'Em ', (timeList, positionlist, idx, resList) => {
             if(timeList[idx] < 0) {
                 resList[idx] = `O carro não passara nesse semáforo, posição do semaforo: ${positionlist[idx]} metro(s)`;
             }
@@ -86,11 +95,11 @@ function tratData(local) {
         timeText.innerHTML = timesText[0];
     
         const timeStamps = new ElementosInputs('<div class="traco"></div><div class="time-point"><div class="bullet-point"></div><p class="time">{value}</p></div>');
-        const timesDiferences = new ElementosInputs('<p class="diferenca-tempo">{value} segundo(s)</p></div>')
+        const timesDiferences = new ElementosInputs('<p class="diferenca-tempo">{value} segundo(s)</p></div>');
 
-        paragrafoAteSemaoforo.innerHTML = `Para chegar ao primeiro semáforo da posição inicial demorou ${timesDiference[0]} segundo(s).`
+        paragrafoAteSemaoforo.innerHTML = `Para chegar ao primeiro semáforo da posição inicial demorou ${timesDiference[0].toFixed(2)} segundo(s).`
         trajetoPlace.innerHTML += timeStamps.doOnList(timesText.slice(1, timesText.length), "value");
-        temposDiferenciaisPlace.innerHTML += timesDiferences.doOnList(timesDiference.slice(1, timesDiference.length), "value")
+        temposDiferenciaisPlace.innerHTML += timesDiferences.doOnList(converterTodosDecimal(timesDiference.slice(1, timesDiference.length), 2), "value")
     
         resultados.classList.add("appear");
         popupPositions.classList.remove("appear");
