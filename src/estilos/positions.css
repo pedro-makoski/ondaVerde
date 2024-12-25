@@ -13,8 +13,8 @@
     transition: .2s;
 }
 
-.resultados {
-    width: 100%;
+.resultados {   
+    width: 100vw;
 }
 
 .appear {
@@ -25,7 +25,12 @@
     transform: translateY(-50%);
 }
 
+.trajeto {
+    width: 50%;
+}
+
 .trajeto-infos {
+    margin-bottom: 90px;
     display: flex;
     flex-direction: row-reverse;
 }
@@ -40,11 +45,12 @@
     height: 20px;
     background-color: var(--primary-color);
     border-radius: 50%;
+    flex-shrink: 0;
 }
 
 .traco {
     width: 7px;
-    height: 100px;
+    height: 200px;
     background-color: var(--primary-color);
     transform: translate(6.5px, 0);
 }
@@ -64,11 +70,11 @@
 }
 
 .tempos-diferenciais:nth-child(1n) {
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .tempos-diferenciais > p:not(:first-child) {
-    margin-top: 100px;
+    margin-top: 200px;
 }
 
 .ate-semaforo {
@@ -143,4 +149,10 @@
     float: none;
     margin-bottom: 10px;
     color:white;
+}
+
+@media screen and (max-width: 500px){
+    .time-point:nth-child(1n) p.time{
+        margin-top: 90px;
+    }   
 }

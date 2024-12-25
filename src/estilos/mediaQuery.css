@@ -14,3 +14,23 @@
     width: 460px;
     border-radius: var(--border-radius-padrao);
 }
+
+.trajeto-infos {
+    margin-bottom: 20px;
+}
+
+.traco {
+    height: 120px;
+}
+
+.tempos-diferenciais:nth-child(1n) {
+    margin-top: 60px;
+}
+
+.tempos-diferenciais > p:not(:first-child) {
+    margin-top: 120px;
+}
+
+.time-point:nth-child(1n) p.time{
+    margin-top: 20px;
+}
