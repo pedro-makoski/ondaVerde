@@ -13,8 +13,9 @@
     transition: .2s;
 }
 
-.resultados {   
+.resultados {     
     width: 100vw;
+    min-width: 100%;
 }
 
 .appear {
@@ -23,10 +24,6 @@
     top: 50%;
     opacity: 1;
     transform: translateY(-50%);
-}
-
-.trajeto {
-    width: 50%;
 }
 
 .trajeto-infos {
@@ -38,6 +35,14 @@
 .trajeto, .tempos-diferenciais{
     padding-top: 20px;
     flex-shrink: 0;
+}
+
+.trajeto {
+    width: 55%;
+}
+
+.tempos-diferenciais {
+    width: 45%;
 }
 
 .bullet-point {
@@ -65,8 +70,9 @@
 }
 
 .time, .diferenca-tempo{
+    overflow: auto;
     margin-left: 20px;
-    max-width: 200px;
+    max-width: 190px;
 }
 
 .tempos-diferenciais:nth-child(1n) {

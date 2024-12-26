@@ -1,11 +1,13 @@
 .posicoes, .resultados, .aberto-fechado {
     width: 400px;
+    width: 400px;
     height: fit-content;
     border-radius: var(--border-radius-padrao);
 }
 
 .resultados {
     width: 470px;
+    min-width: 470px;
     border-radius: var(--border-radius-padrao);
 }
 
@@ -32,5 +34,9 @@
 }
 
 .time-point:nth-child(1n) p.time{
-    margin-top: 20px;
+    margin-top: 50px;
+}
+
+.time-point:last-child p.time {
+    margin-bottom: 30px;
 }
